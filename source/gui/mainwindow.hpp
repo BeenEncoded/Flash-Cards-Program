@@ -1,6 +1,4 @@
 ﻿#pragma once
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
 #include <QMainWindow>
 #include <QWidget>
 
@@ -21,4 +19,3 @@ private:
 	Ui::MainWindow *ui;
 };
 
-#endif // MAINWINDOW_H

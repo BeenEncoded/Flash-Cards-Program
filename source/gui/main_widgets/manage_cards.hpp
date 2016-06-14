@@ -1,6 +1,4 @@
 ﻿#pragma once
-#ifndef MANAGECARDS_H
-#define MANAGECARDS_H
 #include <QWidget>
 
 namespace Ui
@@ -20,4 +18,3 @@ private:
 	Ui::ManageCards *ui;
 };
 
-#endif // MANAGECARDS_H

@@ -9,6 +9,19 @@
 
 namespace utility
 {
+	namespace
+	{
+		/*for most operations, the following read/write operations will do
+		just fine.  They support all the fundamental types as well as std::strings and
+		std::vectors, which should be all that is needed. */
+		template<typename type> std::istream& read(std::istream&, type&);
+		template<typename type> std::istream& read(std::istream&, std::vector<type>&);
+
+		template<typename type> std::istream& write(std::istream&, type&);
+		template<typename type> std::istream& write(std::istream&, std::vector<type>&);
+	}
+
+	//the type-specific functions:
     std::string peek_string(std::istream&, const unsigned int&);
     std::ostream& write_string(std::ostream&, const std::string&);
     std::istream& read_string(std::istream&, std::string&);
@@ -202,6 +215,48 @@ namespace utility
         
         
     }
+
+	//api
+	namespace
+	{
+		template<typename type>
+		std::istream& read(std::istream& in, type& t)
+		{
+			return in_mem(in, t);
+		}
+
+		template<>
+		std::istream& read<std::string>(std::istream& in, std::string& s)
+		{
+			return read_string(in, s);
+		}
+
+		template<typename type>
+		std::istream& read(std::istream& in, std::vector<type>& v)
+		{
+			return read_vector(in, v);
+		}
+
+		template<typename type>
+		std::ostream& write(std::ostream& out, const type& t)
+		{
+			return out_mem(out, t);
+		}
+
+		template<>
+		std::ostream& write<std::string>(std::ostream& out, const std::string& s)
+		{
+			return write_string(out, s);
+		}
+
+		template<typename type>
+		std::ostream& write(std::ostream& out, const std::vector<type>& v)
+		{
+			return write_vector(out, v);
+		}
+
+
+	}
 }
 
 #endif

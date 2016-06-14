@@ -8,6 +8,7 @@
 
 #include "file_loader.hpp"
 #include "filesystem.hpp"
+#include "data/flash_card.hpp"
 
 namespace
 {
@@ -247,6 +248,13 @@ namespace utility
 	template void                            remove    <type>(const ID_T& id, const boost::filesystem::path& folder);
 	template data::account_data              load      <type>(const ID_T& id, const boost::filesystem::path& folder);
 	template std::vector<data::account_data> load_basic<type>(const boost::filesystem::path& folder);*/
+
+	template void                         save      <data::deck_data>(data::deck_data& t, const boost::filesystem::path& folder);
+	template std::set<ID_T>               ids       <data::deck_data>(const boost::filesystem::path& folder);
+	template std::vector<data::deck_data> load_all  <data::deck_data>(const boost::filesystem::path& folder);
+	template void                         remove    <data::deck_data>(const ID_T& id, const boost::filesystem::path& folder);
+	template data::deck_data              load      <data::deck_data>(const ID_T& id, const boost::filesystem::path& folder);
+	template std::vector<data::deck_data> load_basic<data::deck_data>(const boost::filesystem::path& folder);
 
 }
 

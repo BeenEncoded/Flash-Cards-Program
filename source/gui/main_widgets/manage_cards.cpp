@@ -1,4 +1,6 @@
-﻿#include "manage_cards.hpp"
+﻿
+
+#include "manage_cards.hpp"
 #include "ui_managecards.h"
 
 ManageCards::ManageCards(QWidget* parent) : 
