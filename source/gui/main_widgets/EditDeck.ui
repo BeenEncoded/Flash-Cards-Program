@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditDeck</class>
+ <widget class="QWidget" name="EditDeck">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>889</width>
+    <height>413</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>EditDeck</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>Deck Information:</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Deck Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="deck_name"/>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Description:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPlainTextEdit" name="deck_description">
+            <property name="documentTitle">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Cards:</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="card_button">
+            <property name="text">
+             <string>Card</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string>New Card</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListWidget" name="list"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="toolTip">
+        <string>Save the changes you've made.  Doesn't close the deck.</string>
+       </property>
+       <property name="text">
+        <string>Save</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+S</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="toolTip">
+        <string>Closes the deck.</string>
+       </property>
+       <property name="text">
+        <string>Close Deck</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+Backspace</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>EditDeck</receiver>
+   <slot>saveDeck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>565</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>EditDeck</receiver>
+   <slot>closeDeck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>213</x>
+     <y>356</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>730</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>EditDeck</receiver>
+   <slot>newCard()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>729</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>988</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list</sender>
+   <signal>itemActivated(QListWidgetItem*)</signal>
+   <receiver>EditDeck</receiver>
+   <slot>editSelectedCard()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>554</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>503</x>
+     <y>791</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>EditDeck</receiver>
+   <slot>updateButtons()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>742</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>877</x>
+     <y>777</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>saveDeck()</slot>
+  <slot>editSelectedCard()</slot>
+  <slot>updateButtons()</slot>
+  <slot>deleteSelectedCard()</slot>
+  <slot>closeDeck()</slot>
+  <slot>newCard()</slot>
+ </slots>
+</ui>

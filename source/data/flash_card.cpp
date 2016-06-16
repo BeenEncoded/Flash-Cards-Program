@@ -44,8 +44,8 @@ namespace data
 		if(out.good())
 		{
 			write(out, deck.id);
-			write(out, deck.name);
-			write(out, deck.description);
+			write(out, deck.name.toStdString());
+			write(out, deck.description.toStdString());
 			write(out, deck.cards);
 		}
 		return out;

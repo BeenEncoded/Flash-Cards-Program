@@ -9,18 +9,27 @@ SOURCES += source/main.cpp \
 		   source/utility/stream_operations.cpp \
 		   source/gui/mainwindow.cpp \
 		   source/data/global.cpp \
-		   source/gui/main_widgets/manage_cards.cpp \
-		   source/data/flash_card.cpp
+		   source/data/flash_card.cpp \
+		   source/gui/main_widgets/ManageDecks.cpp \
+		   source/gui/main_widgets/EditDeck.cpp \
+		   source/gui/main_widgets/EditCard.cpp \
+		   source/gui/dialogs/StudyDeck.cpp
 
 HEADERS += source/utility/file_loader.hpp \
 		   source/utility/filesystem.hpp \
 		   source/utility/stream_operations.hpp \
 		   source/gui/mainwindow.hpp \
 		   source/data/global.hpp \
-		   source/gui/main_widgets/manage_cards.hpp \
-		   source/data/flash_card.hpp
+		   source/data/flash_card.hpp \
+		   source/gui/main_widgets/ManageDecks.hpp \
+		   source/gui/main_widgets/EditDeck.hpp \
+		   source/gui/main_widgets/EditCard.hpp \
+		   source/gui/dialogs/StudyDeck.hpp
 
 FORMS += source/gui/mainwindow.ui \
-		 source/gui/main_widgets/managecards.ui
+		 source/gui/main_widgets/ManageDecks.ui \
+		 source/gui/main_widgets/EditDeck.ui \
+		 source/gui/main_widgets/EditCard.ui \
+		 source/gui/dialogs/StudyDeck.ui
 
-#RESOURCES += 
+RESOURCES += source/resources/resources.qrc
