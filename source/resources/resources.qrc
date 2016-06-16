@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/pictures">
+        <file>arrowleft.png</file>
+        <file>arrowright.png</file>
+        <file>flip64.png</file>
+        <file>shuffle.png</file>
+    </qresource>
+</RCC>

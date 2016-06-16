@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ManageDecks</class>
+ <widget class="QWidget" name="ManageDecks">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>402</width>
+    <height>288</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ManageDecks</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="deck_button">
+       <property name="contextMenuPolicy">
+        <enum>Qt::DefaultContextMenu</enum>
+       </property>
+       <property name="text">
+        <string>Deck</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>New Deck</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QListWidget" name="list"/>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ManageDecks</receiver>
+   <slot>newDeck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>ManageDecks</receiver>
+   <slot>updateButtons()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>168</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list</sender>
+   <signal>itemActivated(QListWidgetItem*)</signal>
+   <receiver>ManageDecks</receiver>
+   <slot>studyDeck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>151</x>
+     <y>690</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>newDeck()</slot>
+  <slot>editSelectedDeck()</slot>
+  <slot>updateButtons()</slot>
+  <slot>studyDeck()</slot>
+ </slots>
+</ui>

@@ -11,10 +11,10 @@ explicit template instantiation for use.
 	{
 		static constexpr const char* const EXTENSION{".dat"};
 
-		static boost::filesystem::path& folder() const;
+		static boost::filesystem::path& folder();
 
 		static utility::ID_T load_id(std::istream&);
-		static type          basic(std::istream&);
+		static type_t          basic(std::istream&);
 
 		utility::ID_T id;
 	};
